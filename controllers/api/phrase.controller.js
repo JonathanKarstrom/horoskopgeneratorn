@@ -29,6 +29,5 @@ function updatePhrase(req, res) {
 }
 
 function deletePhrase(req, res) {
-    console.log(req.body.part,req.body.text);
     res.send(service.deletePhrase(req.body.part,req.body.text));
 }
