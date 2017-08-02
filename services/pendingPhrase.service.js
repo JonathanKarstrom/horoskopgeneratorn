@@ -28,18 +28,11 @@ function newPhrase(id,text) {
   });
 }    
 
-function deletePhrase() {
-    return "not implemented yet";
-    /*
-     var deferred = Q.defer();
+function deletePhrase(id,text) {
+    db.collection('pendingPhrases').update({name:id},{$pull:{phrases:text}}, function(err, result) {
+        if (err) console.log('error while deleting new phrases!');
+    });
 
-     db.users.find().toArray(function (err,users){
-     if(err) deferred.reject(err.name + ': '+err.message);
-     deferred.resolve(users);
-     });
-
-     return deferred.promise;
-     */
 }
 
 

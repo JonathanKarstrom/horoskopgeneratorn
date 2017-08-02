@@ -44,18 +44,11 @@ function updatePhrase() {
      */
 }
 
-function deletePhrase() {
-    return "not implemented yet";
-    /*
-     var deferred = Q.defer();
+function deletePhrase(id,text) {
+    db.collection('phrases').update({name:id},{$pull:{phrases:text}}, function(err, result) {
+        if (err) console.log('error while deleting new phrases!');
+    });
 
-     db.users.find().toArray(function (err,users){
-     if(err) deferred.reject(err.name + ': '+err.message);
-     deferred.resolve(users);
-     });
-
-     return deferred.promise;
-     */
 }
 
 

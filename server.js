@@ -28,20 +28,7 @@ var part3 = [];
 //Max nr of seconds between update
 var delay = 600;
 
-phraseService.getAll().then(function (phrases) {
-    for (var i = 0; i < phrases.length; i++) {
-        if (phrases[i].name == 'part1') {
-            part1 = phrases[i].phrases;
-        }
-        if (phrases[i].name == 'part2') {
-            part2 = phrases[i].phrases;
-        }
-        if (phrases[i].name == 'part3') {
-            part3 = phrases[i].phrases;
-        }
-    }
-
-});
+getPhrases();
 
 horoscopeService.getAll().then(function (result) {
     zodiacs = result;
@@ -75,11 +62,9 @@ var interval2 = setInterval(intervalFunction2, 5000);
 function newHoroskop() {
 
     getPhrases();
-
     horoscopeService.getAll().then(function (result) {
         zodiacs = result;
     });
-
     for (i = 0; i < zodiacs.length; i++) {
         text = part1[Math.floor((Math.random() * part1.length))]
             + ". " + part2[Math.floor((Math.random() * part2.length))]
@@ -88,16 +73,15 @@ function newHoroskop() {
     }
 }
 
+//function to get newest set of phrases from the db
 function getPhrases() {
     phraseService.getAll().then(function (phrases) {
         for (var i = 0; i < phrases.length; i++) {
             if (phrases[i].name === 'part1') {
                 part1 = phrases[i].phrases;
-
             }
             if (phrases[i].name === 'part2') {
                 part2 = phrases[i].phrases;
-
             }
             if (phrases[i].name === 'part3') {
                 part3 = phrases[i].phrases;

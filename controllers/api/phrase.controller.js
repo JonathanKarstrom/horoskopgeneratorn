@@ -5,7 +5,7 @@ var service = require('services/phrase.service');
 router.get('/', getAll);
 router.post('/addphrase', addPhrase);
 router.put('/updatephrase', updatePhrase);
-router.delete('/deletephrase', deletePhrase);
+router.post('/deletephrase', deletePhrase);
 
 module.exports = router;
 
@@ -29,5 +29,6 @@ function updatePhrase(req, res) {
 }
 
 function deletePhrase(req, res) {
-    res.send(service.deletePhrase(req.body.part,req.body.id));
+    console.log(req.body.part,req.body.text);
+    res.send(service.deletePhrase(req.body.part,req.body.text));
 }

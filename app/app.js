@@ -151,37 +151,40 @@ app.controller('moderatorCtrl', function ($scope, $http) {
         });
     };
 
-    $scope.removePhrase = function (part, id) {
+    $scope.removePhrase = function (part, text) {
         $http({
             url: '/api/phrases/deletephrase',
-            method: "DELETE",
-            data: {
-                'part': part,
-                'id': id
-            }
-        })
-    };
-
-    $scope.removePendingPhrase = function (part, id) {
-        $http({
-            url: '/api/phrases/deletephrase',
-            method: "DELETE",
-            data: {
-                'part': part,
-                'id': id
-            }
-        })
-    };
-
-    $scope.approvePhrase = function (part, text, id) {
-        $http({
-            url: 'api/phrases/addphrase',
             method: "POST",
             data: {
                 'part': part,
                 'text': text
             }
         })
+
+    };
+
+    $scope.removePendingPhrase = function (part, text) {
+        $http({
+            url: '/api/pendingphrases/deletephrase',
+            method: "POST",
+            data: {
+                'part': part,
+                'text': text
+            }
+        })
+
+    };
+
+    $scope.approvePhrase = function (part, text) {
+        $http({
+            url: '/api/phrases/addphrase',
+            method: "POST",
+            data: {
+                'part': part,
+                'text': text
+            }
+        })
+
     };
 });
 

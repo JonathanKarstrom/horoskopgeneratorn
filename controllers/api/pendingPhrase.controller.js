@@ -4,7 +4,7 @@ var service = require('services/pendingPhrase.service');
 
 router.get('/', getAll);
 router.post('/addphrase', addPhrase);
-router.delete('/deletephrase', deletePhrase);
+router.post('/deletephrase', deletePhrase);
 
 module.exports = router;
 
@@ -25,7 +25,6 @@ function addPhrase(req, res) {
     res.sendStatus(200);
 }
 
-
 function deletePhrase(req, res) {
-    res.send(service.deletePhrase(req.body.part,req.body.id));
+    res.send(service.deletePhrase(req.body.part,req.body.text));
 }
