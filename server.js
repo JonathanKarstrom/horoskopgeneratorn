@@ -26,7 +26,7 @@ var part2 = [];
 var part3 = [];
 
 //Max nr of seconds between update
-var delay = 3600;
+var delay = 600;
 
 phraseService.getAll().then(function (phrases) {
 		for(var i = 0; i < phrases.length; i++){
