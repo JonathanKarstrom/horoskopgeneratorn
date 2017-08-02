@@ -1,0 +1,4 @@
+{
+  "connectionString": "mongodb://sec_user:kalle123@ds117931.mlab.com:17931/heroku_g4n7l4vb",
+  "apiUrl": "api-url"
+}

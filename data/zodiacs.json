@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Stenbocken",
+    "symbol": "&#9809;",
+    "date": "22/12 - 19/1",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Vattumannen",
+    "symbol": "&#9810;",
+    "date": "20/1 - 18/2",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Fiskarna",
+    "symbol": "&#9811;",
+    "date": "19/2 - 20/3",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Väduren",
+    "symbol": "&#9800;",
+    "date": "21/3 - 19/4",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Oxen",
+    "symbol": "&#9801;",
+    "date": "20/4 - 20/5",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Tvillingarna",
+    "symbol": "&#9802;",
+    "date": "21/5 - 21/6",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Kräftan",
+    "symbol": "&#9803;",
+    "date": "22/6 - 22/7",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Lejonet",
+    "symbol": "&#9804;",
+    "date": "23/7 - 22/8",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Jungfrun",
+    "symbol": "&#9805;",
+    "date": "23/8 - 22/9",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Vågen",
+    "symbol": "&#9806;",
+    "date": "23/9 - 22/10",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Skorpionen",
+    "symbol": "&#9807;",
+    "date": "23/10 - 21/11",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  },
+  {
+    "name": "Skytten",
+    "symbol": "&#9808;",
+    "date": "22/11 - 21/12",
+    "text": "Det här är en teststräng",
+    "likes": 0
+  }
+]
