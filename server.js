@@ -29,25 +29,24 @@ var part3 = [];
 var delay = 600;
 
 phraseService.getAll().then(function (phrases) {
-		for(var i = 0; i < phrases.length; i++){
-			if(phrases[i].name == 'part1'){
-				part1 = phrases[i].phrases;
-			}
-			if(phrases[i].name == 'part2'){
-				part2 = phrases[i].phrases;
-			}
-			if(phrases[i].name == 'part3'){
-				part3 = phrases[i].phrases;
-			
-			}
-	}
-	
+    for (var i = 0; i < phrases.length; i++) {
+        if (phrases[i].name == 'part1') {
+            part1 = phrases[i].phrases;
+        }
+        if (phrases[i].name == 'part2') {
+            part2 = phrases[i].phrases;
+        }
+        if (phrases[i].name == 'part3') {
+            part3 = phrases[i].phrases;
+        }
+    }
+
 });
 
 horoscopeService.getAll().then(function (result) {
-        zodiacs = result;
+    zodiacs = result;
 });
-    
+
 var intervalFunction = function () {
     clearInterval(interval);
     newHoroskop();
@@ -60,29 +59,13 @@ var intervalFunction2 = function () {
     horoscopeService.getAll().then(function (result) {
         zodiacs = result;
     });
-    
-    phraseService.getAll().then(function (phrases) {
-		for(var i = 0; i < phrases.length; i++){
-			if(phrases[i].name == 'part1'){
-				part1 = phrases[i].phrases;
-
-			}
-			if(phrases[i].name == 'part2'){
-				part2 = phrases[i].phrases;
-
-			}
-			if(phrases[i].name == 'part3'){
-				part3 = phrases[i].phrases;
-			
-			}
-	}
-    });
-    for (var i = 0; i < zodiacs.length; i++){
-        if (zodiacs[i].likes < -4){
+    getPhrases();
+    for (var i = 0; i < zodiacs.length; i++) {
+        if (zodiacs[i].likes < -4) {
             text = part1[Math.floor((Math.random() * part1.length))]
-            + part2[Math.floor((Math.random() * part2.length))]
-            + part3[Math.floor((Math.random() * part3.length))];
-            horoscopeService.updateText(zodiacs[i].name,text)
+                + ". " + part2[Math.floor((Math.random() * part2.length))]
+                + ". " + part3[Math.floor((Math.random() * part3.length))]+ ".";
+            horoscopeService.updateText(zodiacs[i].name, text);
         }
     }
     interval2 = setInterval(intervalFunction2, 5000);
@@ -90,34 +73,38 @@ var intervalFunction2 = function () {
 var interval2 = setInterval(intervalFunction2, 5000);
 
 function newHoroskop() {
-    
-    phraseService.getAll().then(function (phrases) {
-		for(var i = 0; i < phrases.length; i++){
-			if(phrases[i].name == 'part1'){
-				part1 = phrases[i].phrases;
 
-			}
-			if(phrases[i].name == 'part2'){
-				part2 = phrases[i].phrases;
-
-			}
-			if(phrases[i].name == 'part3'){
-				part3 = phrases[i].phrases;
-			
-			}
-	}
-    });
+    getPhrases();
 
     horoscopeService.getAll().then(function (result) {
         zodiacs = result;
     });
-    
+
     for (i = 0; i < zodiacs.length; i++) {
         text = part1[Math.floor((Math.random() * part1.length))]
-        +". " + part2[Math.floor((Math.random() * part2.length))]
-        +". "+ part3[Math.floor((Math.random() * part3.length))];
-        horoscopeService.updateText(zodiacs[i].name,text)+"."
+            + ". " + part2[Math.floor((Math.random() * part2.length))]
+            + ". " + part3[Math.floor((Math.random() * part3.length))]+ ".";
+        horoscopeService.updateText(zodiacs[i].name, text);
+    }
+}
+
+function getPhrases() {
+    phraseService.getAll().then(function (phrases) {
+        for (var i = 0; i < phrases.length; i++) {
+            if (phrases[i].name === 'part1') {
+                part1 = phrases[i].phrases;
+
+            }
+            if (phrases[i].name === 'part2') {
+                part2 = phrases[i].phrases;
+
+            }
+            if (phrases[i].name === 'part3') {
+                part3 = phrases[i].phrases;
+
+            }
         }
+    });
 }
 
 var port = 8100;
